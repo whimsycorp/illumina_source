@@ -1,0 +1,8 @@
+{"BrickColor":"Bright purple","Name":"BasePlate","Position":{"x":0.0,"y":0.0,"z":0.0},"Size":{"x":32.0,"y":1.0,"z":32.0}}
+{"BrickColor":"White","Name":"Platform","Position":{"x":-24.0,"y":1.0,"z":0.0},"Size":{"x":6.0,"y":1.0,"z":6.0}}
+{"BrickColor":"White","Name":"Platform2","Position":{"x":-36.0,"y":3.0,"z":0.0},"Size":{"x":6.0,"y":1.0,"z":6.0}}
+{"BrickColor":"White","Name":"Platform3","Position":{"x":-46.0,"y":4.0,"z":13.0},"Size":{"x":1.0,"y":1.0,"z":20.0}}
+{"BrickColor":"White","Name":"Platform4","Position":{"x":-46.0,"y":4.0,"z":26.0},"Size":{"x":6.0,"y":1.0,"z":6.0}}
+{"BrickColor":"White","Name":"Platform5","Position":{"x":-46.0,"y":4.0,"z":0.0},"Size":{"x":6.0,"y":1.0,"z":6.0}}
+{"BrickColor":"White","Name":"SpawnLocation","Position":{"x":0.0,"y":1.0,"z":0.0},"Size":{"x":1.0,"y":1.0,"z":1.0}}
+{"BrickColor":"White","Name":"WedgePart","Position":{"x":-38.5,"y":4.5,"z":26.0},"Size":{"x":12.0,"y":1.0,"z":6.0}}

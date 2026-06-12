@@ -13,6 +13,7 @@ config_version=5
 config/name="Illumina"
 config/description="IT'S FREE!!!"
 config/version="0.1.1-alpha"
+run/main_scene="uid://c5df1hsfckv8s"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=24
 boot_splash/bg_color=Color(0.18632111, 3.5989768e-05, 0.19851726, 1)
