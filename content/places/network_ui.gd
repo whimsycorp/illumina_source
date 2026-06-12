@@ -11,6 +11,7 @@ func _on_client_pressed() -> void:
 	else: NetworkHandler.newClient("localhost")
 	
 	$MenuButton.button_pressed = false
+	$ChatButton.button_pressed = true
 
 
 func _on_menu_button_toggled(toggled_on: bool) -> void:
