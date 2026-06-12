@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bakfdvh11yku"]
+
+[ext_resource type="PackedScene" uid="uid://dp2vv7xmw1uj8" path="res://content/places/basePart.tscn" id="1_vf16p"]
+[ext_resource type="Texture2D" uid="uid://db35t0lnq6j6o" path="res://content/textures/materials/plastic/normal.png" id="2_cxjcp"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_cxjcp"]
+points = PackedVector3Array(0.5, 1, -0.5, 0.5, 1, 0.5, 0.5, 0, -0.5, 0.5, 0, 0.5, -0.5, 0, 0.5, -0.5, 0, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0vuoh"]
+normal_enabled = true
+normal_scale = 4.0
+normal_texture = ExtResource("2_cxjcp")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="PrismMesh" id="PrismMesh_825p7"]
+material = SubResource("StandardMaterial3D_0vuoh")
+left_to_right = 1.0
+
+[node name="WedgePart" unique_id=1969177692 instance=ExtResource("1_vf16p")]
+
+[node name="CollisionMesh" parent="." index="0" unique_id=872059150]
+shape = SubResource("ConvexPolygonShape3D_cxjcp")
+
+[node name="PartMesh" parent="." index="1" unique_id=1337772813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("PrismMesh_825p7")

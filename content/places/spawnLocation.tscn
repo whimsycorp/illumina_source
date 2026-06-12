@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://clkh6lpjt7kjp"]
+
+[ext_resource type="Texture2D" uid="uid://cceo5vk3nwooa" path="res://content/textures/SpawnLocation.png" id="1_jhowx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vcao4"]
+size = Vector3(8, 1, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g7pt6"]
+size = Vector3(8, 1, 8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2e6ic"]
+transparency = 1
+albedo_texture = ExtResource("1_jhowx")
+uv1_scale = Vector3(3, 2, 2)
+uv1_offset = Vector3(1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_fs7w0"]
+size = Vector3(8, 0.001, 8)
+
+[node name="SpawnLocation" type="Node3D" unique_id=1627097895]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=210823688]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=207544632]
+shape = SubResource("BoxShape3D_vcao4")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D" unique_id=950142598]
+mesh = SubResource("BoxMesh_g7pt6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/MeshInstance3D2" unique_id=303841675]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_2e6ic")
+mesh = SubResource("BoxMesh_fs7w0")

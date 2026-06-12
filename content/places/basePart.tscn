@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dp2vv7xmw1uj8"]
+
+[ext_resource type="Texture2D" uid="uid://db35t0lnq6j6o" path="res://content/textures/materials/plastic/normal.png" id="1_ibnuc"]
+[ext_resource type="Script" uid="uid://deacjmgdh8xm3" path="res://content/scripts/BasePart.gd" id="1_ksv5w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1rl3n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ksv5w"]
+normal_enabled = true
+normal_scale = 4.0
+normal_texture = ExtResource("1_ibnuc")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ksv5w"]
+material = SubResource("StandardMaterial3D_ksv5w")
+
+[node name="BasePart" type="StaticBody3D" unique_id=1969177692]
+script = ExtResource("1_ksv5w")
+metadata/BrickColor = "White"
+
+[node name="CollisionMesh" type="CollisionShape3D" parent="." unique_id=872059150]
+shape = SubResource("BoxShape3D_1rl3n")
+
+[node name="PartMesh" type="MeshInstance3D" parent="." unique_id=1337772813]
+mesh = SubResource("BoxMesh_ksv5w")
+
+[node name="Surfaces" type="Node3D" parent="." unique_id=1618271328]
