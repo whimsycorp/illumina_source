@@ -56,8 +56,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_3gd23")
 [node name="InsertPart" type="Button" parent="Control/Panel" unique_id=1114192969]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.0023148144
-anchor_top = -0.047999993
+anchor_left = -0.0023148148
+anchor_top = -0.048
 anchor_right = -0.0023148148
 anchor_bottom = -0.048
 offset_left = 7.0
@@ -94,7 +94,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Clone" type="Button" parent="Control/Panel" unique_id=1934368731]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.19369788
+anchor_left = 0.19369787
 anchor_top = -0.056
 anchor_right = 0.19369787
 anchor_bottom = -0.056

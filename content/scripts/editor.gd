@@ -10,7 +10,6 @@ extends Node3D
 @onready var opacity: LineEdit = $Control/Panel/Opacity
 
 var selected:Node3D
-var Hovering = {}
 var Instances = {}
 
 var editing = false
@@ -86,30 +85,16 @@ func _on_insert_pressed() -> void:
 	newPart.scale = Vector3(2, 1, 4)
 	workspace.add_child(newPart)
 	
-	newPart.mouse_entered.connect(func():
-		print("entered")
-		Hovering[str(newPart.name)] = true
-	)
-	
-	newPart.mouse_exited.connect(func():
-		print("exited")
-		Hovering[str(newPart.name)] = false
-	)
-	
-	Hovering[str(newPart.name)] = false
 	Instances[Instances.size()] = newPart
 	selected = newPart
 	
 	sx.text = str(selected.scale.x)
 	sy.text = str(selected.scale.y)
 	sz.text = str(selected.scale.z)
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_released("leftClick"):
-		for part in workspace.get_children():
-			if Hovering[str(part.name)]:
-				selected = part
-				print(str(part.name))
+	
+	newPart.connect("clicked", func():
+		selected = newPart
+		)
 
 func x_submitted(new_text: String) -> void:
 	selected.scale.x = float(new_text)
@@ -137,9 +122,11 @@ func _on_clone_pressed() -> void:
 	newPart.position += Vector3(0, newPart.scale.y, 0)
 	workspace.add_child(newPart)
 	
-	Hovering[str(newPart.name)] = false
 	Instances[Instances.size()] = newPart
 	selected = newPart
+	newPart.connect("clicked", func():
+		selected = newPart
+		)
 
 @onready var filename: LineEdit = $Control/Panel/filename
 
