@@ -8,19 +8,27 @@ var Peer = NodeTunnelPeer.new()
 @export var PlayerNames = {}
 @export var Character: CharacterBody3D
 signal playerChatted(id, msg)
+signal ServerCreated
 
 func _ready() -> void:
 	multiplayer.multiplayer_peer = Peer
 	Peer.connect_to_relay("relay.nodetunnel.io", 9998)
 	
 	await Peer.relay_connected
+	
+	var args = Array(OS.get_cmdline_args())
+	
+	if args.has("-server"):
+		print("Starting game as server..")
+		newServer()
 
 func newServer() -> void:
 	Peer.host()
 	await Peer.hosting
+	ServerCreated.emit()
 	
 	DisplayServer.clipboard_set(str(Peer.online_id))
-	print(str(Peer.online_id))
+	print(str("Current Server ID: ", Peer.online_id))
 	
 	Peer.peer_connected.connect(
 		func(pid):

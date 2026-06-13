@@ -8,6 +8,7 @@ var BrickColor = {
 	"Bright yellow" = Color(0.93, 0.837, 0.0, 1.0),
 	"Bright green" = Color(0.36, 0.73, 0.175, 1.0),
 	"Brown" = Color(0.32, 0.179, 0.063, 1.0),
+	"Tan" = Color(0.87, 0.746, 0.583, 1.0),
 	"White" = Color(1.0, 1.0, 1.0, 1.0),
 	"Steel grey" = Color(0.613, 0.613, 0.613, 1.0),
 	"Flint" = Color(0.25, 0.25, 0.25, 1.0),
@@ -21,6 +22,9 @@ func getBrickColor():
 
 func getCollidable():
 	var result
+	if get_meta("CanCollide") == true or get_meta("CanCollide") == false:
+		return get_meta("CanCollide")
+	
 	if get_meta("CanCollide") == "true":
 		result = true
 	else: result = false
@@ -28,6 +32,11 @@ func getCollidable():
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	pass
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
 	var color = getBrickColor()
 	var opacity = getOpacity()
 	var collidable = getCollidable()
@@ -45,9 +54,3 @@ func _ready() -> void:
 		$CollisionMesh.disabled = true
 	
 	$PartMesh.set_surface_override_material(0, material)
-	print("loaded Instance " + name + "!")
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

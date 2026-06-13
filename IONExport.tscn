@@ -4,15 +4,3 @@
 
 [node name="IONExport" type="Node" unique_id=159986205]
 script = ExtResource("1_mtmkq")
-
-[node name="FileDialog" type="FileDialog" parent="." unique_id=267763681]
-oversampling_override = 1.0
-title = "Export scene as .ion"
-position = Vector2i(0, 36)
-visible = true
-ok_button_text = "Export"
-mode_overrides_title = false
-file_mode = 0
-use_native_dialog = true
-
-[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]

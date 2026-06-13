@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dclvye5kh7kgh"]
+
+[ext_resource type="PackedScene" uid="uid://dp2vv7xmw1uj8" path="res://content/places/basePart.tscn" id="1_co3iq"]
+
+[node name="Workspace" type="Node3D" unique_id=325550361]
+
+[node name="BasePlate" parent="." unique_id=1969177692 instance=ExtResource("1_co3iq")]
+transform = Transform3D(256, 0, 0, 0, 1, 0, 0, 0, 256, 0, 0, 0)
+metadata/BrickColor = "Bright green"
+
+[node name="tower" parent="." unique_id=1547817948 instance=ExtResource("1_co3iq")]
+transform = Transform3D(8, 0, 0, 0, 32, 0, 0, 0, 8, -24, 11, -14)
+metadata/BrickColor = "Bright green"
+
+[node name="tower2" parent="." unique_id=1290478243 instance=ExtResource("1_co3iq")]
+transform = Transform3D(8, 0, 0, 0, 32, 0, 0, 0, 8, -26, 11, 2)
+metadata/BrickColor = "Bright red"
+
+[node name="tower3" parent="." unique_id=1654194983 instance=ExtResource("1_co3iq")]
+transform = Transform3D(8, 0, 0, 0, 32, 0, 0, 0, 8, -18, 11, 19)
+metadata/BrickColor = "Bright blue"
+
+[node name="tower4" parent="." unique_id=600217487 instance=ExtResource("1_co3iq")]
+transform = Transform3D(8, 0, 0, 0, 32, 0, 0, 0, 8, -1, 11, 16)
+metadata/BrickColor = "Bright yellow"
+
+[node name="tower5" parent="." unique_id=364835160 instance=ExtResource("1_co3iq")]
+transform = Transform3D(-8, 0, -6.993822e-07, 0, 32, 0, 6.993822e-07, 0, -8, 16.000002, 11, 9)
+metadata/BrickColor = "Bright green"
+
+[node name="tower6" parent="." unique_id=1916225337 instance=ExtResource("1_co3iq")]
+transform = Transform3D(-8, 0, -6.993822e-07, 0, 32, 0, 6.993822e-07, 0, -8, 18, 11, -7.000001)
+metadata/BrickColor = "Bright red"
+
+[node name="tower7" parent="." unique_id=165376587 instance=ExtResource("1_co3iq")]
+transform = Transform3D(-8, 0, -6.993822e-07, 0, 32, 0, 6.993822e-07, 0, -8, 9.999999, 11, -24)
+metadata/BrickColor = "Bright blue"
+
+[node name="tower8" parent="." unique_id=452053947 instance=ExtResource("1_co3iq")]
+transform = Transform3D(-8, 0, -6.993822e-07, 0, 32, 0, 6.993822e-07, 0, -8, -7, 11, -21)
+metadata/BrickColor = "Bright yellow"

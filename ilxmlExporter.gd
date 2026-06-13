@@ -1,14 +1,8 @@
 extends Node
 
-func _on_file_dialog_file_selected(path: String) -> void:
-	var RawScene = load(path)
-	var InstantiatedScene = RawScene.instantiate()
-	
-	var fileName = path.get_file().trim_suffix("." + path.get_extension())
-	print(fileName)
-	
+func export_to_file(fileName: String, srcNode:Node) -> void:
 	var exportedScene = FileAccess.open("res://ilm_places/" + fileName + ".ilm", FileAccess.WRITE)
-	var sceneNodes = InstantiatedScene.get_children()
+	var sceneNodes = srcNode.get_children()
 	for node:Node3D in sceneNodes:
 		# instance resource
 		exportedScene.store_var(node.scene_file_path)

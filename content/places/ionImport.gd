@@ -29,11 +29,29 @@ func loadPlace(path: String) -> void:
 		
 	place.close()
 
+var path
+var http := HTTPRequest.new()
 
 func _ready() -> void:
-	var path
+	http.connect("request_completed", _request_completed)
+	
 	if get_meta("FilePath") != "":
 		path = get_meta("FilePath")
 	else: path = "res://ilm_places/default.ilm"
+	print(str("path: ", path))
 	
-	loadPlace(path)
+	add_child(http)
+	getPlace(path)
+
+func getPlace(url):
+	var da = DirAccess.open("res://")
+	if da.file_exists("temp.ilm"):
+		da.remove("temp.ilm")
+	http.download_file = "user://temp.ilm"
+	http.request(url)
+
+func _request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
+	if result == OK:
+		print(str(body))
+		
+		loadPlace("user://temp.ilm")

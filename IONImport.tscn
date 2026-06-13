@@ -2,6 +2,18 @@
 
 [ext_resource type="Script" uid="uid://dpevs27vw5jgt" path="res://content/places/ionImport.gd" id="1_68kl4"]
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_ou533"]
+properties/0/path = NodePath(".:metadata/FilePath")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
 [node name="Workspace" type="Node" unique_id=1631264820]
 script = ExtResource("1_68kl4")
-metadata/FilePath = ""
+metadata/FilePath = "res://ilm_places/IlluminaCafe.ilm"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1028315333]
+replication_config = SubResource("SceneReplicationConfig_ou533")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="." unique_id=112706624]
+
+[connection signal="request_completed" from="HTTPRequest" to="." method="_request_completed"]

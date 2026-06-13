@@ -1,0 +1,219 @@
+[gd_scene format=3 uid="uid://wx2lyx14jirp"]
+
+[ext_resource type="Script" uid="uid://33laoynrqxqa" path="res://content/scripts/editor.gd" id="1_3gd23"]
+[ext_resource type="Texture2D" uid="uid://b5owoari8dp6a" path="res://content/textures/InsertObject.png" id="2_5cl2y"]
+[ext_resource type="PackedScene" uid="uid://fm5wtxgb6sey" path="res://content/places/Skybox.scn" id="3_tu5ju"]
+[ext_resource type="Texture2D" uid="uid://dy0ytwbwmwt7l" path="res://content/textures/Clone.png" id="4_ogphd"]
+[ext_resource type="PackedScene" uid="uid://c0bhxp00advnq" path="res://IONExport.tscn" id="5_45trm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3gd23"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(18.892157, 18.892157, 18.892157, 1)
+corner_detail = 5
+
+[sub_resource type="SystemFont" id="SystemFont_5cl2y"]
+font_names = PackedStringArray("Arial")
+font_weight = 600
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ogphd"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+
+[sub_resource type="SystemFont" id="SystemFont_ogphd"]
+font_names = PackedStringArray("Comic Sans MS")
+
+[sub_resource type="SystemFont" id="SystemFont_3gd23"]
+font_names = PackedStringArray("Comic Sans MS")
+
+[node name="Editor" type="Node3D" unique_id=1505819219]
+script = ExtResource("1_3gd23")
+
+[node name="Lighting" parent="." unique_id=1077328176 instance=ExtResource("3_tu5ju")]
+
+[node name="Control" type="Control" parent="." unique_id=1629195193]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control" unique_id=1379758670]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -540.5
+offset_bottom = 62.5
+grow_horizontal = 2
+scale = Vector2(2, 2)
+theme_override_styles/panel = SubResource("StyleBoxFlat_3gd23")
+
+[node name="InsertPart" type="Button" parent="Control/Panel" unique_id=1114192969]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0023148144
+anchor_top = -0.047999993
+anchor_right = -0.0023148148
+anchor_bottom = -0.048
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 142.0
+offset_bottom = 79.0
+scale = Vector2(0.75, 0.75)
+theme_override_fonts/font = SubResource("SystemFont_5cl2y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ogphd")
+text = "INSERT
+PART"
+icon = ExtResource("2_5cl2y")
+metadata/_edit_use_anchors_ = true
+
+[node name="Export" type="Button" parent="Control/Panel" unique_id=2090905195]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0759963
+anchor_top = 1.672
+anchor_right = 1.0759963
+anchor_bottom = 1.672
+offset_left = -135.0
+offset_top = -72.0
+offset_right = -24.0
+offset_bottom = -45.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.75, 0.75)
+theme_override_fonts/font = SubResource("SystemFont_5cl2y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ogphd")
+text = "EXPORT .ILM"
+metadata/_edit_use_anchors_ = true
+
+[node name="Clone" type="Button" parent="Control/Panel" unique_id=1934368731]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.19369788
+anchor_top = -0.056
+anchor_right = 0.19369787
+anchor_bottom = -0.056
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 142.0
+offset_bottom = 79.0
+scale = Vector2(0.75, 0.75)
+theme_override_fonts/font = SubResource("SystemFont_5cl2y")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ogphd")
+text = "CLONE
+PART"
+icon = ExtResource("4_ogphd")
+metadata/_edit_use_anchors_ = true
+
+[node name="Size" type="Control" parent="Control/Panel" unique_id=888870981]
+anchors_preset = 0
+offset_left = 182.5
+offset_top = 1.0
+offset_right = 222.5
+offset_bottom = 41.0
+
+[node name="X" type="LineEdit" parent="Control/Panel/Size" unique_id=1444376639]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 4.0
+offset_right = 104.5
+offset_bottom = 27.0
+theme_override_fonts/font = SubResource("SystemFont_ogphd")
+theme_override_font_sizes/font_size = 10
+placeholder_text = "x"
+
+[node name="Y" type="LineEdit" parent="Control/Panel/Size" unique_id=1640794897]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 4.0
+offset_right = 177.5
+offset_bottom = 27.0
+theme_override_fonts/font = SubResource("SystemFont_ogphd")
+theme_override_font_sizes/font_size = 10
+placeholder_text = "y"
+
+[node name="Z" type="LineEdit" parent="Control/Panel/Size" unique_id=1279252660]
+layout_mode = 0
+offset_left = 183.0
+offset_top = 4.0
+offset_right = 251.5
+offset_bottom = 27.0
+theme_override_fonts/font = SubResource("SystemFont_ogphd")
+theme_override_font_sizes/font_size = 10
+placeholder_text = "z"
+
+[node name="Label" type="Label" parent="Control/Panel/Size" unique_id=1028842897]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 58.5
+offset_right = 231.0
+offset_bottom = 81.5
+theme_override_fonts/font = SubResource("SystemFont_3gd23")
+text = "cancollide"
+horizontal_alignment = 1
+
+[node name="color" type="LineEdit" parent="Control/Panel" unique_id=1436352471]
+layout_mode = 0
+offset_left = 216.5
+offset_top = 33.0
+offset_right = 289.0
+offset_bottom = 56.0
+theme_override_fonts/font = SubResource("SystemFont_ogphd")
+theme_override_font_sizes/font_size = 10
+placeholder_text = "BrickColor"
+
+[node name="filename" type="LineEdit" parent="Control/Panel" unique_id=2104722774]
+layout_mode = 0
+offset_left = 440.5
+offset_top = 5.0
+offset_right = 535.0
+offset_bottom = 28.0
+theme_override_fonts/font = SubResource("SystemFont_ogphd")
+theme_override_font_sizes/font_size = 10
+placeholder_text = "Filename"
+
+[node name="Opacity" type="LineEdit" parent="Control/Panel" unique_id=478975541]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 33.0
+offset_right = 342.5625
+offset_bottom = 56.0
+theme_override_fonts/font = SubResource("SystemFont_ogphd")
+theme_override_font_sizes/font_size = 10
+placeholder_text = "Opacity"
+
+[node name="CheckButton" type="CheckButton" parent="Control/Panel" unique_id=476685824]
+layout_mode = 0
+offset_left = 334.5
+offset_top = 20.5
+offset_right = 378.5
+offset_bottom = 44.5
+scale = Vector2(2, 2)
+
+[node name="Workspace" type="Node" parent="." unique_id=763585364]
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1933529747]
+transform = Transform3D(0.70710677, 0.35355338, -0.6123724, 0, 0.8660254, 0.5, 0.70710677, -0.35355338, 0.6123724, 0, 0, 0)
+
+[node name="EditorView" type="Camera3D" parent="Node3D" unique_id=1882037231]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 5.9604645e-08, 0, -1.1920929e-07, 1.0000001, 0, 1.8089032, 31.06371)
+fov = 90.0
+
+[node name="IONExport" parent="." unique_id=159986205 instance=ExtResource("5_45trm")]
+
+[connection signal="pressed" from="Control/Panel/InsertPart" to="." method="_on_insert_pressed"]
+[connection signal="pressed" from="Control/Panel/Export" to="." method="_on_export"]
+[connection signal="pressed" from="Control/Panel/Clone" to="." method="_on_clone_pressed"]
+[connection signal="editing_toggled" from="Control/Panel/Size/X" to="." method="_on_x_editing_toggled"]
+[connection signal="text_submitted" from="Control/Panel/Size/X" to="." method="x_submitted"]
+[connection signal="text_submitted" from="Control/Panel/Size/Y" to="." method="y_submitted"]
+[connection signal="text_submitted" from="Control/Panel/Size/Z" to="." method="z_submitted"]
+[connection signal="text_submitted" from="Control/Panel/color" to="." method="color_submitted"]
+[connection signal="text_submitted" from="Control/Panel/filename" to="." method="color_submitted"]
+[connection signal="text_submitted" from="Control/Panel/Opacity" to="." method="opacity_submitted"]
+[connection signal="toggled" from="Control/Panel/CheckButton" to="." method="cancollide_toggled"]
