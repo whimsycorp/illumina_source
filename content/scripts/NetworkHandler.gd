@@ -5,6 +5,7 @@ const PORT: int = 1337
 const MAX_PLAYERS = 16
 
 var Peer = NodeTunnelPeer.new()
+@export var PlayerNames = {}
 
 func _ready() -> void:
 	multiplayer.multiplayer_peer = Peer
@@ -14,7 +15,6 @@ func _ready() -> void:
 
 func newServer() -> void:
 	Peer.host()
-	
 	await Peer.hosting
 	
 	DisplayServer.clipboard_set(str(Peer.online_id))
@@ -25,8 +25,17 @@ func newServer() -> void:
 			print("Player " + str(pid) + " has joined the server!")
 	)
 
-func newClient(hostID:String) -> void:
-	
+@export var ClientName: String
+@export var UniqueID: String
+
+func newClient(hostID:String, username:String) -> void:
 	Peer.join(hostID)
-	
 	await Peer.joined
+	var PlayerName
+	var id = multiplayer.get_unique_id()
+	if username:
+		PlayerName = username
+	else: PlayerName = str("Guest", multiplayer.get_unique_id())
+	PlayerNames[id] = PlayerName
+	ClientName = PlayerName
+	UniqueID = str(multiplayer.get_unique_id()).sha256_text()

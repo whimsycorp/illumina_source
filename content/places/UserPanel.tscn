@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bw11e21xx8y4q"]
+
+[ext_resource type="Script" uid="uid://bk6vwqqjwdnoe" path="res://content/places/UserPanel.gd" id="1_3tdbj"]
+
+[sub_resource type="SystemFont" id="SystemFont_3b0rv"]
+font_names = PackedStringArray("Arial")
+font_weight = 600
+subpixel_positioning = 0
+
+[sub_resource type="SystemFont" id="SystemFont_nad4p"]
+font_names = PackedStringArray("Arial")
+font_weight = 200
+subpixel_positioning = 0
+
+[node name="Panel" type="Panel" unique_id=744506222]
+offset_left = -175.0
+offset_top = -3.0
+offset_right = 44.0
+offset_bottom = 72.0
+script = ExtResource("1_3tdbj")
+
+[node name="PlayerName" type="Label" parent="." unique_id=631075122]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 14.0
+offset_right = 214.0
+offset_bottom = 52.0
+theme_override_fonts/font = SubResource("SystemFont_3b0rv")
+theme_override_font_sizes/font_size = 32
+text = "PlayerName"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UserID" type="Label" parent="." unique_id=1412650051]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 51.0
+offset_right = 209.0
+offset_bottom = 70.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.28235295)
+theme_override_fonts/font = SubResource("SystemFont_nad4p")
+theme_override_font_sizes/font_size = 16
+text = "<UniqueID:null>"
+horizontal_alignment = 2
+vertical_alignment = 1

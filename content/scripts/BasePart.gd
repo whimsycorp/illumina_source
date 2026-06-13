@@ -7,6 +7,7 @@ var BrickColor = {
 	"Bright blue" = Color(0.155, 0.31, 0.62, 1.0),
 	"Bright yellow" = Color(0.93, 0.837, 0.0, 1.0),
 	"Bright green" = Color(0.36, 0.73, 0.175, 1.0),
+	"Brown" = Color(0.32, 0.179, 0.063, 1.0),
 	"White" = Color(1.0, 1.0, 1.0, 1.0),
 	"Steel grey" = Color(0.613, 0.613, 0.613, 1.0),
 	"Flint" = Color(0.25, 0.25, 0.25, 1.0),
