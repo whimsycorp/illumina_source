@@ -1,8 +1,0 @@
-{"BrickColor":"Bright purple","ClassName":"res://content/places/basePart.tscn","Name":"BasePlate","px":0.0,"py":0.0,"pz":0.0,"sx":32.0,"sy":1.0,"sz":32.0}
-{"BrickColor":"White","ClassName":"res://content/places/basePart.tscn","Name":"Platform","px":-24.0,"py":1.0,"pz":0.0,"sx":6.0,"sy":1.0,"sz":6.0}
-{"BrickColor":"White","ClassName":"res://content/places/basePart.tscn","Name":"Platform2","px":-36.0,"py":3.0,"pz":0.0,"sx":6.0,"sy":1.0,"sz":6.0}
-{"BrickColor":"White","ClassName":"res://content/places/basePart.tscn","Name":"Platform3","px":-46.0,"py":4.0,"pz":13.0,"sx":1.0,"sy":1.0,"sz":20.0}
-{"BrickColor":"White","ClassName":"res://content/places/basePart.tscn","Name":"Platform4","px":-46.0,"py":4.0,"pz":26.0,"sx":6.0,"sy":1.0,"sz":6.0}
-{"BrickColor":"White","ClassName":"res://content/places/basePart.tscn","Name":"Platform5","px":-46.0,"py":4.0,"pz":0.0,"sx":6.0,"sy":1.0,"sz":6.0}
-{"BrickColor":"White","ClassName":"res://content/places/spawnLocation.tscn","Name":"SpawnLocation","px":0.0,"py":1.0,"pz":0.0,"sx":1.0,"sy":1.0,"sz":1.0}
-{"BrickColor":"White","ClassName":"res://content/places/wedgePart.tscn","Name":"WedgePart","px":-38.5,"py":4.5,"pz":26.0,"sx":12.0,"sy":1.0,"sz":6.0}

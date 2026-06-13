@@ -1,7 +1,65 @@
 [gd_scene format=3 uid="uid://b31wukwlpu13"]
 
+[ext_resource type="Texture2D" uid="uid://uvmaxhofagu6" path="res://content/textures/appIcon.png" id="2_w1ojh"]
+[ext_resource type="Texture2D" uid="uid://beotm6gjk6315" path="res://content/textures/launcherBg.png" id="3_3wawc"]
+
+[sub_resource type="GDScript" id="GDScript_hiat4"]
+script/source = "extends Control
+
+@onready var label: Label = $Panel/Panel2/Label
+@onready var updater: HTTPRequest = $UpdateRetriever
+var updating = false
+var extracting = false
+
+func update(link):
+	updater.download_file = \"IlluminaClient.zip\"
+	var request = updater.request(link)
+	updating = true
+
+func _on_request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
+	if result != OK:
+		push_error(\"Update failed, contact support for help.\")
+	
+	if response_code == 200:
+		print(\"downloading..\")
+		print(body.get_string_from_utf8())
+	updating = false
+	extracting = true
+	extract(\"IlluminaClient.zip\")
+
+func extract(path:String):
+	var zr = ZIPReader.new()
+	
+	if zr.open(path) == OK:
+		for filepath in zr.get_files():
+			var fa = FileAccess.open(filepath, FileAccess.WRITE)
+			fa.store_buffer(zr.read_file(filepath))
+			fa.close()
+			
+			if filepath.get_extension() == \"exe\":
+				get_tree().quit(0)
+				OS.execute(filepath, [])
+
+func _process(delta: float) -> void:
+	if updating:
+		var bytes_to_download
+		var percent
+		if updater.get_body_size() != -1:
+			bytes_to_download = updater.get_body_size()
+			percent = snapped((float(updater.get_downloaded_bytes()) / float(updater.get_body_size())) * 100, 0.1)
+		else: bytes_to_download = \"???\"
+		
+		label.text = str(percent, \"% downloaded...\")
+	else:if extracting:
+		
+		label.text = str(\"Extracting files...\")
+
+func _ready() -> void:
+	update(\"https://github.com/whimsycorp/illumina_source/releases/latest/download/IlluminaClient.zip\")
+"
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_024io"]
-bg_color = Color(1, 1, 1, 0.3137255)
+bg_color = Color(0, 0, 0, 0.3137255)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
@@ -18,6 +76,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = SubResource("GDScript_hiat4")
 
 [node name="Panel" type="Panel" parent="." unique_id=1889123197]
 layout_mode = 1
@@ -28,24 +87,68 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_024io")
 
-[node name="Label" type="Label" parent="Panel" unique_id=297014278]
+[node name="Panel2" type="Panel" parent="Panel" unique_id=721243700]
+z_index = -1
 layout_mode = 1
-anchors_preset = 12
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -292.0
+offset_top = -178.0
+offset_right = 294.0
+offset_bottom = 289.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/Panel2" unique_id=297014278]
+z_index = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
-offset_top = -155.0
+offset_left = -255.5
+offset_top = -93.0
+offset_right = 255.5
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = SubResource("SystemFont_0ixgo")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 32
 text = "Checking for updates..."
 horizontal_alignment = 1
 
+[node name="TextureRect" type="TextureRect" parent="Panel/Panel2" unique_id=1073399269]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -173.5
+offset_right = 140.0
+offset_bottom = 82.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("2_w1ojh")
+expand_mode = 3
+stretch_mode = 4
+
 [node name="TextureRect" type="TextureRect" parent="." unique_id=897392350]
+z_index = -2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("3_3wawc")
+
+[node name="UpdateRetriever" type="HTTPRequest" parent="." unique_id=943956920]
+
+[connection signal="request_completed" from="UpdateRetriever" to="." method="_on_request_completed"]

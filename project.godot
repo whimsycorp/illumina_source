@@ -10,17 +10,17 @@ config_version=5
 
 [application]
 
-config/name="Illumina"
+config/name="IlluminaClient"
 config/description="IT'S FREE!!!"
-config/version="0.1.2a"
+config/version="0.1.4-alpha"
 run/main_scene="uid://c5df1hsfckv8s"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=24
-boot_splash/bg_color=Color(0.18632111, 3.5989768e-05, 0.19851726, 1)
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
 boot_splash/use_filter=false
 boot_splash/image="uid://uvmaxhofagu6"
 config/icon="uid://uvmaxhofagu6"
-boot_splash/minimum_display_time=1000
 
 [autoload]
 
