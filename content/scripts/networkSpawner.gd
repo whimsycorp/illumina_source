@@ -13,6 +13,8 @@ func NewPlayer(id:int) -> void:
 	CurrentPlayer.name = "Player" + str(id)
 	
 	get_node(spawn_path).call_deferred("add_child", CurrentPlayer)
+	CurrentPlayer.position = Vector3(0, 50, 0)
+	NetworkHandler.Character = CurrentPlayer
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

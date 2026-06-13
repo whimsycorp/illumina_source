@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://b31wukwlpu13"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_024io"]
+bg_color = Color(1, 1, 1, 0.3137255)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_0ixgo"]
+font_names = PackedStringArray("Comic Sans MS")
+
+[node name="IlluminaLauncher" type="Control" unique_id=54759142]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=1889123197]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_024io")
+
+[node name="Label" type="Label" parent="Panel" unique_id=297014278]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -155.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = SubResource("SystemFont_0ixgo")
+theme_override_font_sizes/font_size = 48
+text = "Checking for updates..."
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=897392350]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

@@ -1,0 +1,346 @@
+[gd_scene format=3 uid="uid://dpp4yvdh8agmw"]
+
+[ext_resource type="PackedScene" uid="uid://dp2vv7xmw1uj8" path="res://content/places/basePart.tscn" id="1_1xg0s"]
+[ext_resource type="PackedScene" uid="uid://bakfdvh11yku" path="res://content/places/wedgePart.tscn" id="2_kqg76"]
+
+[node name="Workspace" type="Node3D" unique_id=325550361]
+
+[node name="BasePlate" parent="." unique_id=1969177692 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(256, 0, 0, 0, 1, 0, 0, 0, 256, 0, 0, 0)
+metadata/BrickColor = "Bright green"
+
+[node name="Platform" parent="." unique_id=504086977 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 6, -24, 4, 0)
+
+[node name="Platform8" parent="." unique_id=2144432610 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(2, 0, 0, 0, 8, 0, 0, 0, 2, 9, 4, -44)
+metadata/BrickColor = "Brown"
+
+[node name="Platform9" parent="." unique_id=1547817948 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 9, 11, -44)
+metadata/BrickColor = "Bright green"
+
+[node name="Platform10" parent="." unique_id=555793394 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(2, 0, 0, 0, 8, 0, 0, 0, 2, -10, 4, -50)
+metadata/BrickColor = "Brown"
+
+[node name="Platform11" parent="." unique_id=924249775 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -10, 11, -50)
+metadata/BrickColor = "Bright green"
+
+[node name="Platform12" parent="." unique_id=243347786 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(2, 0, 0, 0, 8, 0, 0, 0, 2, -27, 4, -41)
+metadata/BrickColor = "Brown"
+
+[node name="Platform13" parent="." unique_id=711841184 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -27, 11, -41)
+metadata/BrickColor = "Bright green"
+
+[node name="Platform14" parent="." unique_id=466273964 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(2, 0, 0, 0, 8, 0, 0, 0, 2, -18, 4, -64)
+metadata/BrickColor = "Brown"
+
+[node name="Platform15" parent="." unique_id=964668400 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -18, 11, -64)
+metadata/BrickColor = "Bright green"
+
+[node name="Platform16" parent="." unique_id=37101220 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(2, 0, 0, 0, 8, 0, 0, 0, 2, 11, 4, 25)
+metadata/BrickColor = "Brown"
+
+[node name="Platform17" parent="." unique_id=1968745137 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 11, 11, 25)
+metadata/BrickColor = "Bright green"
+
+[node name="Platform18" parent="." unique_id=1666282409 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(2, 0, 0, 0, 8, 0, 0, 0, 2, -6, 4, 33)
+metadata/BrickColor = "Brown"
+
+[node name="Platform19" parent="." unique_id=1471389913 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -6, 11, 33)
+metadata/BrickColor = "Bright green"
+
+[node name="Platform20" parent="." unique_id=1848253803 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(2, 0, 0, 0, 8, 0, 0, 0, 2, -19, 4, 25)
+metadata/BrickColor = "Brown"
+
+[node name="Platform21" parent="." unique_id=215518478 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -19, 11, 25)
+metadata/BrickColor = "Bright green"
+
+[node name="Platform22" parent="." unique_id=1704063789 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(2, 0, 0, 0, 8, 0, 0, 0, 2, -26, 4, 38)
+metadata/BrickColor = "Brown"
+
+[node name="Platform23" parent="." unique_id=172967915 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -26, 11, 38)
+metadata/BrickColor = "Bright green"
+
+[node name="Platform24" parent="." unique_id=546598317 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(2, 0, 0, 0, 8, 0, 0, 0, 2, 8, 4, 39)
+metadata/BrickColor = "Brown"
+
+[node name="Platform25" parent="." unique_id=710204184 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 8, 11, 39)
+metadata/BrickColor = "Bright green"
+
+[node name="Platform2" parent="." unique_id=1416599743 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 6, -36, 6, 0)
+
+[node name="SignStand" parent="." unique_id=1302555066 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 8, 0, -8.742278e-08, 0, -1, 15.499999, 4.5, 8.5)
+metadata/BrickColor = "Flint"
+
+[node name="SignStand2" parent="." unique_id=1523917561 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 8, 0, -8.742278e-08, 0, -1, 15.500001, 4.5, -7.5)
+metadata/BrickColor = "Flint"
+
+[node name="SignStand3" parent="." unique_id=1954724703 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1, 0, 1.3113416e-06, 0, 1, 0, -8.742278e-08, 0, -15, 15.5, 2.5, 0.5)
+metadata/BrickColor = "Flint"
+
+[node name="Stand" parent="." unique_id=1183773825 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-0.99999994, 0, 1.3113415e-06, 0, 5.4999995, 0, -8.742277e-08, 0, -14.999999, 15.5, 5.75, 0.5)
+
+[node name="SignStand4" parent="." unique_id=1265365599 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1, 0, 1.4861872e-06, 0, 1, 0, -8.742278e-08, 0, -17, 15.5, 9, 0.5)
+metadata/BrickColor = "Flint"
+
+[node name="Platform3" parent="." unique_id=1418354362 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 20, -47, 7, 13)
+metadata/BrickColor = "Steel grey"
+
+[node name="Platform4" parent="." unique_id=188716539 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 6, -46, 7, 26)
+
+[node name="Platform7" parent="." unique_id=557258204 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 6, -30.5, 8, 26)
+
+[node name="Platform6" parent="." unique_id=1733572938 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(9.5, 0, 0, 0, 1, 0, 0, 0, 6, -38.25, 7, 26)
+
+[node name="Platform5" parent="." unique_id=133426627 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 6, -47, 7, 0)
+
+[node name="WedgePart" parent="." unique_id=1374072908 instance=ExtResource("2_kqg76")]
+transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 6, -39.5, 7.5, 26)
+
+[node name="Window" parent="." unique_id=952742527 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1.7484555e-07, 0, -1, 0, 6, 0, 4, 0, -4.371139e-08, 20.539215, 4.5, -35.07843)
+metadata/BrickColor = "Bright blue"
+metadata/Opacity = 0.5
+
+[node name="WindowPart" parent="." unique_id=630689662 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 6, 0, 1, 0, -4.371139e-08, 20.539215, 4.5, -37.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="WindowPart2" parent="." unique_id=866984282 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 5, 0, -4.371139e-08, 20.539215, 1, -35.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="Window2" parent="." unique_id=112696959 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1.7484555e-07, 0, -1, 0, 6, 0, 4, 0, -4.371139e-08, 20.539215, 4.5, -30.07843)
+metadata/BrickColor = "Bright blue"
+metadata/Opacity = 0.5
+
+[node name="WindowPart3" parent="." unique_id=2022333540 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 6, 0, 1, 0, -4.371139e-08, 20.539215, 4.5, -32.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="WindowPart4" parent="." unique_id=1823367892 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 5, 0, -4.371139e-08, 20.539215, 1, -30.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="WindowPart5" parent="." unique_id=1691134485 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 7, 0, 1, 0, -4.371139e-08, 20.539215, 4, -27.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="WindowPart6" parent="." unique_id=751700330 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 7, 0, 1, 0, -4.371139e-08, 20.539215, 4, -22.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="Door" parent="." unique_id=864606050 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1.7484555e-07, 0, -1, 0, 7, 0, 4, 0, -4.371139e-08, 20.539215, 4, -20.07843)
+metadata/BrickColor = "Brown"
+metadata/CanCollide = false
+
+[node name="Door2" parent="." unique_id=86959374 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1.7484555e-07, 0, -1, 0, 7, 0, 4, 0, -4.371139e-08, 20.539215, 4, -25.07843)
+metadata/BrickColor = "Brown"
+metadata/CanCollide = false
+
+[node name="Window5" parent="." unique_id=1560530711 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1.7484555e-07, 0, -1, 0, 6, 0, 4, 0, -4.371139e-08, 20.539215, 4.5, -15.07843)
+metadata/BrickColor = "Bright blue"
+metadata/Opacity = 0.5
+
+[node name="WindowPart10" parent="." unique_id=1703708523 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 5, 0, -4.371139e-08, 20.539215, 1, -15.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="Window6" parent="." unique_id=285880300 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1.7484555e-07, 0, -1, 0, 6, 0, 4, 0, -4.371139e-08, 20.539215, 4.5, -10.07843)
+metadata/BrickColor = "Bright blue"
+metadata/Opacity = 0.5
+
+[node name="WindowPart11" parent="." unique_id=812730780 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 6, 0, 1, 0, -4.371139e-08, 20.539215, 4.5, -12.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="WindowPart19" parent="." unique_id=378720823 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 6, 0, 1, 0, -4.371139e-08, 20.539215, 4.5, -17.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="WindowPart12" parent="." unique_id=1028580325 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 5, 0, -4.371139e-08, 20.539215, 1, -10.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="Window7" parent="." unique_id=969414425 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1.7484555e-07, 0, -1, 0, 6, 0, 4, 0, -4.371139e-08, 20.539215, 4.5, -5.07843)
+metadata/BrickColor = "Bright blue"
+metadata/Opacity = 0.5
+
+[node name="WindowPart13" parent="." unique_id=1284557892 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 6, 0, 1, 0, -4.371139e-08, 20.539215, 4.5, -7.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="WindowPart14" parent="." unique_id=1061102316 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 5, 0, -4.371139e-08, 20.539215, 1, -5.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="Window8" parent="." unique_id=1778963115 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1.7484555e-07, 0, -1, 0, 6, 0, 4, 0, -4.371139e-08, 20.539215, 4.5, -0.078430176)
+metadata/BrickColor = "Bright blue"
+metadata/Opacity = 0.5
+
+[node name="WindowPart15" parent="." unique_id=1653746698 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 6, 0, 1, 0, -4.371139e-08, 20.539215, 4.5, -2.5784302)
+metadata/BrickColor = "Steel grey"
+
+[node name="WindowPart18" parent="." unique_id=1883288529 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 8, 0, 1, 0, -4.371139e-08, 20.539215, 4.5, 2.4215698)
+metadata/BrickColor = "Steel grey"
+
+[node name="WindowPart16" parent="." unique_id=1346730228 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 5, 0, -4.371139e-08, 20.539215, 1, -0.5784302)
+metadata/BrickColor = "Steel grey"
+
+[node name="WindowPart17" parent="." unique_id=1653787404 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1.7484556e-06, 0, -1, 0, 1, 0, 40, 0, -4.371139e-08, 20.539215, 8, -18.07843)
+metadata/BrickColor = "Steel grey"
+
+[node name="Window3" parent="." unique_id=1819472849 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1.7484555e-07, 0, -1, 0, 6, 0, 4, 0, -4.371139e-08, 46.539215, 4.5, -35.07843)
+metadata/BrickColor = "Bright blue"
+metadata/Opacity = 0.5
+
+[node name="WindowPart20" parent="." unique_id=221905053 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1.7484555e-07, 0, -1, 0, 1, 0, 4, 0, -4.371139e-08, 46.539215, 1, -35.07843)
+metadata/BrickColor = "Steel grey"
+
+[node name="Window4" parent="." unique_id=725352135 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1.7484555e-07, 0, -1, 0, 6, 0, 4, 0, -4.371139e-08, 46.539215, 4.5, -30.07843)
+metadata/BrickColor = "Bright blue"
+metadata/Opacity = 0.5
+
+[node name="WindowPart21" parent="." unique_id=522376899 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 6, 0, 1, 0, -4.371139e-08, 46.539215, 4.5, -32.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="WindowPart22" parent="." unique_id=1075376455 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 5, 0, -4.371139e-08, 46.539215, 1, -30.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="Window9" parent="." unique_id=1312282182 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1.7484555e-07, 0, -1, 0, 6, 0, 4, 0, -4.371139e-08, 46.539215, 4.5, -15.07843)
+metadata/BrickColor = "Bright blue"
+metadata/Opacity = 0.5
+
+[node name="Window10" parent="." unique_id=281995326 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1.7484555e-07, 0, -1, 0, 6, 0, 4, 0, -4.371139e-08, 46.539215, 4.5, -10.07843)
+metadata/BrickColor = "Bright blue"
+metadata/Opacity = 0.5
+
+[node name="WindowPart29" parent="." unique_id=1764314647 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 6, 0, 1, 0, -4.371139e-08, 46.539215, 4.5, -12.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="WindowPart30" parent="." unique_id=1646699231 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 5, 0, -4.371139e-08, 46.539215, 1, -10.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="WindowPart38" parent="." unique_id=35629878 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 6, 0, 1, 0, -4.371139e-08, 46.539215, 4.5, -17.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="WindowPart39" parent="." unique_id=1429918811 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 5, 0, -4.371139e-08, 46.539215, 1, -15.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="Window13" parent="." unique_id=398401044 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1.7484555e-07, 0, -1, 0, 6, 0, 4, 0, -4.371139e-08, 46.539215, 4.5, -20.07843)
+metadata/BrickColor = "Bright blue"
+metadata/Opacity = 0.5
+
+[node name="WindowPart40" parent="." unique_id=1903250442 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 6, 0, 1, 0, -4.371139e-08, 46.539215, 4.5, -22.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="WindowPart41" parent="." unique_id=263504544 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 5, 0, -4.371139e-08, 46.539215, 1, -20.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="Window14" parent="." unique_id=562173299 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1.7484555e-07, 0, -1, 0, 6, 0, 4, 0, -4.371139e-08, 46.539215, 4.5, -25.07843)
+metadata/BrickColor = "Bright blue"
+metadata/Opacity = 0.5
+
+[node name="WindowPart42" parent="." unique_id=1722535321 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 6, 0, 1, 0, -4.371139e-08, 46.539215, 4.5, -27.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="WindowPart43" parent="." unique_id=332493515 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 5, 0, -4.371139e-08, 46.539215, 1, -25.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="Window11" parent="." unique_id=2132177948 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1.7484555e-07, 0, -1, 0, 6, 0, 4, 0, -4.371139e-08, 46.539215, 4.5, -5.07843)
+metadata/BrickColor = "Bright blue"
+metadata/Opacity = 0.5
+
+[node name="WindowPart31" parent="." unique_id=1365709352 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 6, 0, 1, 0, -4.371139e-08, 46.539215, 4.5, -7.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="WindowPart32" parent="." unique_id=1948228232 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 5, 0, -4.371139e-08, 46.539215, 1, -5.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="Window12" parent="." unique_id=1024588135 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1.7484555e-07, 0, -1, 0, 6, 0, 4, 0, -4.371139e-08, 46.539215, 4.5, -0.078430176)
+metadata/BrickColor = "Bright blue"
+metadata/Opacity = 0.5
+
+[node name="WindowPart33" parent="." unique_id=1381790241 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 6, 0, 1, 0, -4.371139e-08, 46.539215, 4.5, -2.5784302)
+metadata/BrickColor = "Steel grey"
+
+[node name="WindowPart34" parent="." unique_id=673660652 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-4.371139e-08, 0, -26, 0, 8, 0, 1, 0, -1.136496e-06, 34.039215, 4.5, 2.4215698)
+metadata/BrickColor = "Steel grey"
+
+[node name="WindowPart37" parent="." unique_id=1257051821 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-4.371139e-08, 0, -26, 0, 8, 0, 1, 0, -1.136496e-06, 34.039215, 4.5, -37.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="WindowPart35" parent="." unique_id=1844217255 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 5, 0, -4.371139e-08, 46.539215, 1, -0.5784302)
+metadata/BrickColor = "Steel grey"
+
+[node name="WindowPart36" parent="." unique_id=675937192 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1.7047441e-06, 0, -1, 0, 1, 0, 39, 0, -4.371139e-08, 46.539215, 8, -17.57843)
+metadata/BrickColor = "Steel grey"
+
+[node name="WindowPart44" parent="." unique_id=111484083 instance=ExtResource("1_1xg0s")]
+transform = Transform3D(-1.7921669e-06, 0, -27, 0, 1, 0, 41, 0, -1.1802075e-06, 33.539215, 9, -17.57843)
+metadata/BrickColor = "Steel grey"

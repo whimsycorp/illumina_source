@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bpf2kfox1wfpf"]
+
+[ext_resource type="Script" uid="uid://dpevs27vw5jgt" path="res://content/places/ionImport.gd" id="1_68kl4"]
+
+[node name="Workspace" type="Node" unique_id=1631264820]
+script = ExtResource("1_68kl4")
+metadata/FilePath = ""

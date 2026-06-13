@@ -1,27 +1,39 @@
 extends Node
 
-func _ion_loaded(path: String) -> void:
+func loadPlace(path: String) -> void:
 	var json = JSON.new()
-	var place = FileAccess.open(path, FileAccess.READ_WRITE)
+	var place = FileAccess.open(path, FileAccess.READ)
 	
 	while place.get_position() < place.get_length():
-		var line = place.get_line()
-		var rawData = place.get_as_text()
-		var instanceData = json.parse(line, true)
+		var InstancePath = place.get_var()
+		print(str(InstancePath))
+		var packedInstance = load(InstancePath)
+		print(str(packedInstance))
+		var newInstance: Node3D = packedInstance.instantiate()
+		newInstance.name = place.get_var()
 		
-		var dataCheck = json.parse(rawData)
-		if dataCheck != OK:
-			print("JSON Parse Error: ", json.get_error_message(), " in ", line, " at line ", json.get_error_line())
-			continue
+		var instancePosition = Vector3(place.get_var(), place.get_var(), place.get_var())
+		var instanceScale = Vector3(place.get_var(), place.get_var(), place.get_var())
+		var instanceRot = Vector3(place.get_var(), place.get_var(), place.get_var())
 		
-		print(json.parse_string(rawData))
+		newInstance.position = instancePosition
+		newInstance.scale = instanceScale
+		newInstance.rotation = instanceRot
 		
-		var newInstance:Node3D = load("res://content/places/basePart.tscn").instantiate()
-		newInstance.set_meta("BrickColor", instanceData["BrickColor"])
+		newInstance.set_meta("BrickColor", str(place.get_var()))
+		newInstance.set_meta("Opacity", str(place.get_var()))
+		newInstance.set_meta("CanCollide", str(place.get_var()))
+		
 		add_child(newInstance)
-		
-		newInstance.position = Vector3(instanceData["px"], instanceData["py"], instanceData["pz"])
-		newInstance.transform.scaled(Vector3(instanceData["sx"], instanceData["sy"], instanceData["sz"]))
-		
+		print(str(newInstance, ", ", place.get_position()))
 		
 	place.close()
+
+
+func _ready() -> void:
+	var path
+	if get_meta("FilePath") != "":
+		path = get_meta("FilePath")
+	else: path = "res://ilm_places/default.ilm"
+	
+	loadPlace(path)

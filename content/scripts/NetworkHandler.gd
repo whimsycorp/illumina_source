@@ -6,6 +6,8 @@ const MAX_PLAYERS = 16
 
 var Peer = NodeTunnelPeer.new()
 @export var PlayerNames = {}
+@export var Character: CharacterBody3D
+signal playerChatted(id, msg)
 
 func _ready() -> void:
 	multiplayer.multiplayer_peer = Peer
@@ -38,4 +40,4 @@ func newClient(hostID:String, username:String) -> void:
 	else: PlayerName = str("Guest", multiplayer.get_unique_id())
 	PlayerNames[id] = PlayerName
 	ClientName = PlayerName
-	UniqueID = str(multiplayer.get_unique_id()).sha256_text()
+	UniqueID = str(multiplayer.get_unique_id()).sha1_text()

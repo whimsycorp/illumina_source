@@ -13,14 +13,37 @@ var BrickColor = {
 	"Flint" = Color(0.25, 0.25, 0.25, 1.0),
 }
 
+func getOpacity():
+	return float(get_meta("Opacity"))
+	
+func getBrickColor():
+	return BrickColor[get_meta("BrickColor")]
+
+func getCollidable():
+	var result
+	if get_meta("CanCollide") == "true":
+		result = true
+	else: result = false
+	return result
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var color
-	if BrickColor.get(get_meta("BrickColor")):
-		color = BrickColor.get(get_meta("BrickColor"))
-	else: color = BrickColor.get("White")
-	var material = load("res://content/textures/materials/plastic/plastic.res").duplicate()
-	material.albedo_color = BrickColor.get(get_meta("BrickColor"))
+	var color = getBrickColor()
+	var opacity = getOpacity()
+	var collidable = getCollidable()
+	
+	print(str(color))
+	print(str(opacity))
+	print(str(collidable))
+	
+	var material:BaseMaterial3D = load("res://content/textures/materials/plastic/plastic.res").duplicate()
+	material.albedo_color = Color(color, opacity)
+	if opacity != 1.0:
+		material.set_transparency(BaseMaterial3D.TRANSPARENCY_ALPHA)
+	
+	if !collidable:
+		$CollisionMesh.disabled = true
+	
 	$PartMesh.set_surface_override_material(0, material)
 	print("loaded Instance " + name + "!")
 

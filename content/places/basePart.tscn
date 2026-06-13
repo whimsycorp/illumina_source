@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://db35t0lnq6j6o" path="res://content/textures/materials/plastic/normal.png" id="1_ibnuc"]
 [ext_resource type="Script" uid="uid://deacjmgdh8xm3" path="res://content/scripts/BasePart.gd" id="1_ksv5w"]
 [ext_resource type="Texture2D" uid="uid://caswgkuldem22" path="res://content/textures/materials/surfaces/studs.png" id="3_y4coe"]
+[ext_resource type="Texture2D" uid="uid://cq83eu4kilgk7" path="res://content/textures/materials/surfaces/inlets.png" id="4_xy554"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1rl3n"]
 
@@ -28,9 +29,18 @@ uv1_world_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fm30m"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fm30m"]
+transparency = 1
+albedo_texture = ExtResource("4_xy554")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_world_triplanar = true
+
 [node name="BasePart" type="StaticBody3D" unique_id=1969177692]
 script = ExtResource("1_ksv5w")
 metadata/BrickColor = "White"
+metadata/Opacity = 1.0
+metadata/CanCollide = true
 
 [node name="CollisionMesh" type="CollisionShape3D" parent="." unique_id=872059150]
 shape = SubResource("BoxShape3D_1rl3n")
@@ -38,9 +48,14 @@ shape = SubResource("BoxShape3D_1rl3n")
 [node name="PartMesh" type="MeshInstance3D" parent="." unique_id=1337772813]
 mesh = SubResource("BoxMesh_ksv5w")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PartMesh" unique_id=453691839]
+[node name="Studs" type="MeshInstance3D" parent="PartMesh" unique_id=453691839]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.501, 0)
 material_override = SubResource("StandardMaterial3D_xy554")
+mesh = SubResource("PlaneMesh_fm30m")
+
+[node name="Inlets" type="MeshInstance3D" parent="PartMesh" unique_id=1374054486]
+transform = Transform3D(0.5, 0, 0, 0, -0.5, 4.371139e-08, 0, -4.371139e-08, -0.5, 0, -0.501, 0)
+material_override = SubResource("StandardMaterial3D_fm30m")
 mesh = SubResource("PlaneMesh_fm30m")
 
 [node name="Surfaces" type="Node3D" parent="." unique_id=1618271328]

@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://dp2vv7xmw1uj8" path="res://content/places/basePart.tscn" id="1_4210v"]
 [ext_resource type="Texture2D" uid="uid://daw2wi72fb3kg" path="res://content/textures/IlluminaLogo.png" id="2_bo5lm"]
-[ext_resource type="PackedScene" uid="uid://clkh6lpjt7kjp" path="res://content/places/spawnLocation.tscn" id="2_t1lci"]
 [ext_resource type="PackedScene" uid="uid://bakfdvh11yku" path="res://content/places/wedgePart.tscn" id="3_bo5lm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3aumj"]
@@ -70,9 +69,6 @@ transform = Transform3D(9.5, 0, 0, 0, 1, 0, 0, 0, 6, -38.25, 7, 26)
 
 [node name="Platform5" parent="." unique_id=133426627 instance=ExtResource("1_4210v")]
 transform = Transform3D(6, 0, 0, 0, 1, 0, 0, 0, 6, -47, 7, 0)
-
-[node name="SpawnLocation" parent="." unique_id=1627097895 instance=ExtResource("2_t1lci")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="WedgePart" parent="." unique_id=1374072908 instance=ExtResource("3_bo5lm")]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 6, -39.5, 7.5, 26)
