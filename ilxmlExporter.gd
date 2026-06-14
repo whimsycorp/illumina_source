@@ -3,7 +3,9 @@ extends Node
 func export_to_file(fileName: String, srcNode:Node) -> void:
 	var exportedScene = FileAccess.open("res://ilm_places/" + fileName + ".ilm", FileAccess.WRITE)
 	var sceneNodes = srcNode.get_children()
-	for node:Node3D in sceneNodes:
+	for node in sceneNodes:
+		if node == null:
+			return
 		# instance resource
 		exportedScene.store_var(node.scene_file_path)
 		

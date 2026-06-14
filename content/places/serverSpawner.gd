@@ -16,6 +16,6 @@ func loadPlace():
 	if multiplayer.is_server():
 		var placeLoader = load("res://IONImport.tscn")
 		var Loader:Node = placeLoader.instantiate()
-		print(str("place = ", arguments["place"]))
-		Loader.set_meta("FilePath", arguments["place"])
+		if arguments.has("place"):
+			Loader.set_meta("FilePath", arguments["place"])
 		get_node(spawn_path).add_child(Loader)

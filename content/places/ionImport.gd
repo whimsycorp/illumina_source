@@ -37,7 +37,7 @@ func _ready() -> void:
 	
 	if get_meta("FilePath") != "":
 		path = get_meta("FilePath")
-	else: path = "res://ilm_places/default.ilm"
+	else: path = "https://github.com/whimsycorp/illumina_source/raw/refs/heads/main/ilm_places/IlluminaCafe.ilm"
 	print(str("path: ", path))
 	
 	add_child(http)
