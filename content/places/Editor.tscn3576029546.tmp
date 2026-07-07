@@ -74,7 +74,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
 theme = SubResource("Theme_ji2wn")
 
 [node name="Panel" type="Panel" parent="Control" unique_id=1379758670]
@@ -274,7 +273,6 @@ text_overrun_behavior = 1
 fit_to_longest_item = false
 
 [node name="Explorer" type="ItemList" parent="Control" unique_id=649093128]
-texture_filter = 1
 clip_contents = false
 layout_mode = 1
 anchors_preset = 11
@@ -292,7 +290,7 @@ theme_override_colors/font_selected_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 theme_override_styles/panel = SubResource("StyleBoxFlat_tu5ju")
 allow_reselect = true
-icon_scale = 2.0
+icon_mode = 0
 
 [node name="Label2" type="Label" parent="Control/Explorer" unique_id=653037005]
 z_index = -1
@@ -362,20 +360,7 @@ stream = ExtResource("9_8sqmd")
 
 [node name="ray" type="RayCast3D" parent="." unique_id=2125603967]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 9.536743e-07)
-collision_mask = 4294967295
-hit_from_inside = true
-collide_with_areas = true
-
-[node name="cloneRay" type="RayCast3D" parent="." unique_id=47605430]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 256, 0)
-target_position = Vector3(0, -1000000000, 0)
-collision_mask = 4294967295
-hit_from_inside = true
-collide_with_areas = true
-
-[node name="dragRay" type="RayCast3D" parent="." unique_id=1684388214]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 9.536743e-07)
-collision_mask = 32767
+collision_mask = 65535
 hit_from_inside = true
 collide_with_areas = true
 

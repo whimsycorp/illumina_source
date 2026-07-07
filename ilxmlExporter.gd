@@ -1,11 +1,14 @@
 extends Node
 
-func export_to_file(fileName: String, srcNode:Node) -> void:
-	var exportedScene = FileAccess.open("res://ilm_places/" + fileName + ".ilm", FileAccess.WRITE)
+func export_to_file(srcNode:Node, fileName: String = "res://places/Untitled.ilm") -> void:
+	var da = DirAccess.open("res://")
+	da.make_dir("places")
+	var exportedScene = FileAccess.open(fileName, FileAccess.WRITE)
 	var sceneNodes = srcNode.get_children()
 	for node in sceneNodes:
 		if node == null:
 			return
+		
 		# instance resource
 		exportedScene.store_var(node.scene_file_path)
 		
@@ -33,5 +36,5 @@ func export_to_file(fileName: String, srcNode:Node) -> void:
 		exportedScene.store_var(str(node.get_meta("CanCollide")))
 		
 		
-	print("Exported to file " + "res://exports/" + fileName + ".ilm")
+	print("Place exported to %s" % fileName)
 	exportedScene.close()

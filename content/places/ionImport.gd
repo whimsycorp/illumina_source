@@ -37,21 +37,18 @@ func _ready() -> void:
 	
 	if get_meta("FilePath") != "":
 		path = get_meta("FilePath")
-	else: path = "https://github.com/whimsycorp/illumina_source/raw/refs/heads/main/ilm_places/IlluminaCafe.ilm"
+	else: path = "https://junipers.cc/places/default/Baseplate.ilm"
 	print(str("path: ", path))
 	
 	add_child(http)
 	getPlace(path)
 
 func getPlace(url):
-	var da = DirAccess.open("res://")
-	if da.file_exists("temp.ilm"):
-		da.remove("temp.ilm")
-	http.download_file = "user://temp.ilm"
+	http.download_file = "res://temp.ilm"
 	http.request(url)
 
 func _request_completed(result: int, response_code: int, headers: PackedStringArray, body: PackedByteArray) -> void:
 	if result == OK:
 		print(str(body))
-		
-		loadPlace("user://temp.ilm")
+		loadPlace("res://temp.ilm")
+	else: print("Something went wrong loading the place.")

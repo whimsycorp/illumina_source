@@ -12,7 +12,7 @@ config_version=5
 
 config/name="IlluminaClient"
 config/description="IT'S FREE!!!"
-config/version="0.1.4-alpha"
+config/version="0.1.8b-hotfix"
 run/main_scene="uid://c5df1hsfckv8s"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=24
@@ -37,7 +37,11 @@ mouse_cursor/custom_image_hotspot=Vector2(40, 40)
 
 [editor]
 
-run/main_run_args="--place=https://files.catbox.moe/zocgqr.ilm"
+run/main_run_args="-place=https://junipers.cc/places/default/HappierHome.ilm"
+
+[global_group]
+
+Editable=""
 
 [input]
 
@@ -155,6 +159,8 @@ ctrl={
 
 [rendering]
 
+occlusion_culling/bvh_build_quality=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+occlusion_culling/use_occlusion_culling=true
