@@ -13,7 +13,7 @@ config_version=5
 config/name="IlluminaClient"
 config/description="IT'S FREE!!!"
 config/version="0.1.8b-hotfix"
-run/main_scene="uid://c5df1hsfckv8s"
+run/main_scene="uid://b2p0giy3evl11"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 run/max_fps=24
 boot_splash/bg_color=Color(0, 0, 0, 1)
@@ -42,6 +42,10 @@ run/main_run_args="-place=https://junipers.cc/places/default/HappierHome.ilm"
 [global_group]
 
 Editable=""
+
+[gui]
+
+theme/custom_font="uid://xl3b6vwfjm0h"
 
 [input]
 

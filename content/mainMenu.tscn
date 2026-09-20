@@ -1,0 +1,294 @@
+[gd_scene format=3 uid="uid://b2p0giy3evl11"]
+
+[ext_resource type="Texture2D" uid="uid://f51w1gswsvnq" path="res://content/textures/menuBg.png" id="1_x0le8"]
+[ext_resource type="Texture2D" uid="uid://bjpispgi3neh" path="res://content/textures/blueprintBg.png" id="2_sbd6x"]
+[ext_resource type="AudioStream" uid="uid://8koclijad0je" path="res://content/sounds/mainMenu.mp3" id="3_nb0x3"]
+[ext_resource type="Texture2D" uid="uid://daw2wi72fb3kg" path="res://content/textures/IlluminaLogo.png" id="4_3b7js"]
+[ext_resource type="Script" uid="uid://bmrq6rvnahm1l" path="res://content/mainMenuScreenTransition.gd" id="4_of5sg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b7js"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_detail = 1
+
+[sub_resource type="Animation" id="Animation_gvn14"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pc8uq"]
+resource_name = "fade_in"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uk4tx"]
+_data = {
+&"RESET": SubResource("Animation_gvn14"),
+&"fade_in": SubResource("Animation_pc8uq")
+}
+
+[node name="MainMenu" type="Node2D" unique_id=164719080]
+
+[node name="Background" type="Node2D" parent="." unique_id=1757454450]
+
+[node name="CityImage" type="Sprite2D" parent="Background" unique_id=21843931]
+position = Vector2(548, 0)
+scale = Vector2(0.667, 0.667)
+texture = ExtResource("1_x0le8")
+offset = Vector2(0, 540)
+
+[node name="Tiling" type="Parallax2D" parent="Background" unique_id=984973899]
+z_index = -1
+scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(-216, -69)
+repeat_size = Vector2(3900.5, 1500.5)
+autoscroll = Vector2(5, 10)
+repeat_times = 4
+follow_viewport = false
+
+[node name="Blueprint" type="Sprite2D" parent="Background/Tiling" unique_id=1429399743]
+position = Vector2(-1192, -249)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_sbd6x")
+centered = false
+
+[node name="Focus" type="CanvasLayer" parent="." unique_id=885400864]
+
+[node name="StartPlaying" type="Control" parent="Focus" unique_id=951592330]
+z_index = 5
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Focus/StartPlaying" unique_id=241382390]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -119.0
+offset_bottom = 82.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3b7js")
+
+[node name="Sprite2D" type="Sprite2D" parent="Focus/StartPlaying" unique_id=192230208]
+texture_filter = 6
+position = Vector2(540, 321)
+texture = ExtResource("4_3b7js")
+
+[node name="Label" type="Label" parent="Focus/StartPlaying" unique_id=853301784]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 396.5
+offset_right = 780.0
+offset_bottom = 429.5
+theme_override_font_sizes/font_size = 32
+text = "Press any key to start playing!"
+horizontal_alignment = 1
+
+[node name="SignIn" type="Control" parent="Focus" unique_id=24226709]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Focus/SignIn" unique_id=890465157]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -364.25
+offset_top = -208.5
+offset_right = 364.25
+offset_bottom = 208.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Focus/SignIn/Panel" unique_id=874549834]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 94.5
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 48
+text = "Account Log-in"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NoAccount" type="Label" parent="Focus/SignIn/Panel" unique_id=171723451]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 131.0
+offset_bottom = 156.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "DON'T HAVE AN ACCOUNT YET?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SignUpOrPlay" type="Label" parent="Focus/SignIn/Panel" unique_id=2101235862]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 174.0
+offset_bottom = 199.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "OR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Username" type="LineEdit" parent="Focus/SignIn/Panel" unique_id=988393897]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.5
+offset_top = -129.0
+offset_right = 197.5
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Username"
+
+[node name="Password" type="LineEdit" parent="Focus/SignIn/Panel" unique_id=494748719]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.0
+offset_top = -63.0
+offset_right = 198.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Password"
+
+[node name="CheckBox" type="CheckBox" parent="Focus/SignIn/Panel" unique_id=35032588]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.5
+offset_top = 11.0
+offset_right = 108.5
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 24
+text = "Stay logged in?"
+
+[node name="Button" type="Button" parent="Focus/SignIn/Panel" unique_id=2056940763]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.5
+offset_top = 56.0
+offset_right = 68.5
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 32
+text = "Log in"
+
+[node name="SignUp" type="Button" parent="Focus/SignIn/Panel" unique_id=1262816343]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.0
+offset_top = 174.0
+offset_right = -34.0
+offset_bottom = 199.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "Sign Up"
+
+[node name="Visitor" type="Button" parent="Focus/SignIn/Panel" unique_id=827489410]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 36.0
+offset_top = 174.0
+offset_right = 173.0
+offset_bottom = 199.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "Play as a Visitor"
+
+[node name="ScreenTransition" type="CanvasLayer" parent="." unique_id=489165892]
+layer = 2
+script = ExtResource("4_of5sg")
+
+[node name="ColorRect" type="ColorRect" parent="ScreenTransition" unique_id=512688996]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="ScreenTransition" unique_id=1966264678]
+stream = ExtResource("3_nb0x3")
+parameters/looping = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ScreenTransition" unique_id=648867597]
+libraries/ = SubResource("AnimationLibrary_uk4tx")
