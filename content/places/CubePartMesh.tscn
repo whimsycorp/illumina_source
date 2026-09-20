@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b22uvr7og63dq"]
+
+[ext_resource type="Texture2D" uid="uid://caswgkuldem22" path="res://content/textures/materials/surfaces/studs.png" id="2_jxvgc"]
+[ext_resource type="Texture2D" uid="uid://cq83eu4kilgk7" path="res://content/textures/materials/surfaces/inlets.png" id="3_j0uth"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ksv5w"]
+
+[node name="PartMesh" type="MeshInstance3D" unique_id=2082573468]
+transform = Transform3D(1, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_ksv5w")
+
+[node name="Surfaces" type="Node3D" parent="." unique_id=368843517]
+
+[node name="Studs" type="Sprite3D" parent="Surfaces" unique_id=1098581294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.501, 0)
+pixel_size = 0.062
+axis = 1
+texture = ExtResource("2_jxvgc")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 16)
+
+[node name="Inlets" type="Sprite3D" parent="Surfaces" unique_id=1730728184]
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, -0.501, 0)
+pixel_size = 0.062
+axis = 1
+texture = ExtResource("3_j0uth")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
