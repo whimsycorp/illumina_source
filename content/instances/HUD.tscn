@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://bgi5v1te7n1rr"]
+
+[ext_resource type="Texture2D" uid="uid://uluulwimx5qq" path="res://content/textures/IlluminaIcon.png" id="1_q2lkp"]
+[ext_resource type="Texture2D" uid="uid://cbmyy2x5fsqal" path="res://content/textures/Chat.png" id="2_eryci"]
+
+[sub_resource type="SystemFont" id="SystemFont_8mcut"]
+font_names = PackedStringArray("Arial")
+font_weight = 600
+subpixel_positioning = 0
+
+[sub_resource type="Theme" id="Theme_oyj1d"]
+default_font = SubResource("SystemFont_8mcut")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oyj1d"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mcut"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="CoreGUI" type="Control" unique_id=557438966]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuButton" type="Button" parent="." unique_id=248112331]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -675.0
+offset_right = 64.0
+offset_bottom = -615.0
+grow_vertical = 0
+focus_mode = 0
+theme = SubResource("Theme_oyj1d")
+shortcut_feedback = false
+shortcut_in_tooltip = false
+icon = ExtResource("1_q2lkp")
+icon_alignment = 1
+
+[node name="ChatButton" type="Button" parent="." unique_id=355114688]
+layout_mode = 0
+offset_left = 69.0
+offset_top = 45.0
+offset_right = 129.0
+offset_bottom = 105.0
+focus_mode = 0
+theme = SubResource("Theme_oyj1d")
+shortcut_feedback = false
+shortcut_in_tooltip = false
+icon = ExtResource("2_eryci")
+icon_alignment = 1
+
+[node name="Topbar" type="Panel" parent="." unique_id=238269647]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 41.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oyj1d")
+
+[node name="ItemList" type="ItemList" parent="Topbar" unique_id=928633765]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -213.0
+offset_top = 45.0
+offset_bottom = 73.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8mcut")
+item_count = 1
+item_0/text = "Thing"
+item_0/selectable = false
+
+[node name="Label" type="RichTextLabel" parent="Topbar" unique_id=1604801594]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -212.0
+offset_bottom = 41.0
+grow_horizontal = 0
+bbcode_enabled = true
+text = "PlayerName
+[font size=12]Account: 13+[/font]
+"
+vertical_alignment = 1
+
+[connection signal="toggled" from="MenuButton" to="." method="_on_menu_button_toggled"]
+[connection signal="toggled" from="ChatButton" to="." method="_on_chat_button_toggled"]

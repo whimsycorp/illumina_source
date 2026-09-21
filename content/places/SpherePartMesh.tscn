@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://k0o5ni3spabr"]
+
+[ext_resource type="ArrayMesh" uid="uid://3yca20f4elhv" path="res://content/meshes/sphere.obj" id="1_6ghit"]
+
+[node name="PartMesh" type="MeshInstance3D" unique_id=2082573468]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = ExtResource("1_6ghit")

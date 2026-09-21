@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://b2p0giy3evl11"]
 
+[ext_resource type="Script" uid="uid://hxa685v1s4sq" path="res://content/main_menu.gd" id="1_gvn14"]
 [ext_resource type="Texture2D" uid="uid://f51w1gswsvnq" path="res://content/textures/menuBg.png" id="1_x0le8"]
 [ext_resource type="Texture2D" uid="uid://bjpispgi3neh" path="res://content/textures/blueprintBg.png" id="2_sbd6x"]
 [ext_resource type="AudioStream" uid="uid://8koclijad0je" path="res://content/sounds/mainMenu.mp3" id="3_nb0x3"]
 [ext_resource type="Texture2D" uid="uid://daw2wi72fb3kg" path="res://content/textures/IlluminaLogo.png" id="4_3b7js"]
 [ext_resource type="Script" uid="uid://bmrq6rvnahm1l" path="res://content/mainMenuScreenTransition.gd" id="4_of5sg"]
+[ext_resource type="Script" uid="uid://php5dvchtfr1" path="res://content/instances/Sound.gd" id="7_pc8uq"]
+[ext_resource type="AudioStream" uid="uid://bkewlcnj4wkwn" path="res://content/sounds/confirmSound.mp3" id="7_uk4tx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3b7js"]
 content_margin_left = 0.0
@@ -13,6 +16,67 @@ content_margin_right = 0.0
 content_margin_bottom = 0.0
 bg_color = Color(0.1, 0.1, 0.1, 0.6)
 corner_detail = 1
+
+[sub_resource type="Animation" id="Animation_of5sg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StartPlaying:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SignIn:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1080, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uk4tx"]
+resource_name = "signup_transition"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StartPlaying:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.1830108, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 479)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SignIn:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.56666666, 1.2333333),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector2(-1080, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5gk7h"]
+_data = {
+&"RESET": SubResource("Animation_of5sg"),
+&"signup_transition": SubResource("Animation_uk4tx")
+}
 
 [sub_resource type="Animation" id="Animation_gvn14"]
 length = 0.001
@@ -52,6 +116,7 @@ _data = {
 }
 
 [node name="MainMenu" type="Node2D" unique_id=164719080]
+script = ExtResource("1_gvn14")
 
 [node name="Background" type="Node2D" parent="." unique_id=1757454450]
 
@@ -84,8 +149,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -0.0013427734
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="Focus/StartPlaying" unique_id=241382390]
 layout_mode = 1
@@ -101,27 +168,29 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_3b7js")
 
 [node name="Sprite2D" type="Sprite2D" parent="Focus/StartPlaying" unique_id=192230208]
 texture_filter = 6
-position = Vector2(540, 321)
+position = Vector2(540, 316.5)
 texture = ExtResource("4_3b7js")
 
 [node name="Label" type="Label" parent="Focus/StartPlaying" unique_id=853301784]
 layout_mode = 0
 offset_left = 306.0
-offset_top = 396.5
+offset_top = 392.0
 offset_right = 780.0
-offset_bottom = 429.5
+offset_bottom = 425.0
 theme_override_font_sizes/font_size = 32
 text = "Press any key to start playing!"
 horizontal_alignment = 1
 
 [node name="SignIn" type="Control" parent="Focus" unique_id=24226709]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1080.0
+offset_right = -1080.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="Focus/SignIn" unique_id=890465157]
 layout_mode = 1
@@ -136,6 +205,8 @@ offset_right = 364.25
 offset_bottom = 208.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Title" type="Label" parent="Focus/SignIn/Panel" unique_id=874549834]
 layout_mode = 1
@@ -209,6 +280,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 placeholder_text = "Password"
+secret = true
 
 [node name="CheckBox" type="CheckBox" parent="Focus/SignIn/Panel" unique_id=35032588]
 layout_mode = 1
@@ -274,6 +346,9 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 16
 text = "Play as a Visitor"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Focus" unique_id=136893829]
+libraries/ = SubResource("AnimationLibrary_5gk7h")
+
 [node name="ScreenTransition" type="CanvasLayer" parent="." unique_id=489165892]
 layer = 2
 script = ExtResource("4_of5sg")
@@ -284,6 +359,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="ScreenTransition" unique_id=1966264678]
@@ -292,3 +368,9 @@ parameters/looping = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ScreenTransition" unique_id=648867597]
 libraries/ = SubResource("AnimationLibrary_uk4tx")
+
+[node name="Confirm" type="AudioStreamPlayer" parent="." unique_id=1123830413]
+stream = ExtResource("7_uk4tx")
+volume_db = 19.034
+script = ExtResource("7_pc8uq")
+metadata/_custom_type_script = "uid://php5dvchtfr1"

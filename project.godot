@@ -32,6 +32,7 @@ PartValues="*uid://dq81ld6cj6xdl"
 
 window/size/viewport_width=1080
 window/size/viewport_height=720
+window/stretch/mode="canvas_items"
 mouse_cursor/custom_image="uid://baxh3gjrmin61"
 mouse_cursor/custom_image_hotspot=Vector2(40, 40)
 
@@ -159,7 +160,8 @@ ctrl={
 
 [physics]
 
-3d/default_gravity=147.0
+3d/default_gravity=196.2
+3d/default_linear_damp=1.0
 
 [rendering]
 
