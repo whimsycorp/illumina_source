@@ -14,9 +14,13 @@ func _ready() -> void:
 		global_position = RootPart.global_position
 		RootPart.position = Vector3.ZERO
 
-func BreakJoints():
+func Break(): ## Breaks any and all Bindings in a model, makes all it's parts tangible, and destroys it's RootPart.
 	for v in get_children():
-		if v is Joint3D:
+		if v is Binding:
+			v.queue_free()
+		if v is BasePart:
+			v.Intangible = false
+		if v == RootPart:
 			v.queue_free()
 
 func TranslateBy(delta:Vector3):

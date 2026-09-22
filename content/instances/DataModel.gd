@@ -21,3 +21,6 @@ func _ready() -> void:
 	add_child(players)
 	add_child(rservice)
 	add_child(coreGui)
+	
+	var TestPlayer = players.NewClient()
+	TestPlayer.LoadCharacter(workspace)

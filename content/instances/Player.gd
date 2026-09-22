@@ -29,5 +29,6 @@ func LoadCharacter(parent:Node):
 		Character.queue_free()
 	Character = NewCharacter
 	parent.add_child(Character)
+	Character.global_position = Vector3.UP * 10
 	add_child(SpawnBass)
 	SpawnBass.Play(true)

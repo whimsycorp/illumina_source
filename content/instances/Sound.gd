@@ -8,7 +8,7 @@ func _init(soundfile:String):
 	var audio = load(soundfile)
 	stream = audio
 
-func Play(DeleteUponEnd:bool):
+func Play(DeleteUponEnd:bool = false):
 	play()
 	
 	if DeleteUponEnd:

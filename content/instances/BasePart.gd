@@ -16,6 +16,7 @@ enum PartShape {
 @export var Intangible:bool = false ## Whether or not the part can be collided with.
 
 @export var Position:Vector3
+@export var PivotOffset:Vector3
 @export var Size:Vector3 = Vector3(2, 1, 4)
 @export var Rotation:Vector3
 
@@ -125,3 +126,6 @@ func _physics_process(delta: float) -> void:
 	
 	PartHitbox.disabled = Intangible
 	freeze = Locked
+	
+	PartMesh.position = -PivotOffset
+	PartHitbox.position = -PivotOffset
